@@ -2,16 +2,16 @@
 require('dotenv').config();
 module.exports = {
     app: {
-        name: process.env.APP_NAME,
-        port: process.env.APP_PORT || 3000,
-        enviroment: process.env.APP_ENV,
+        name: process.env.APP_NAME || "4th problem fcc test",
+        port: process.env.APP_PORT || 5000,
+        enviroment: process.env.APP_ENV || "dev",
         logpath: process.env.LOG_PATH
     },
     mongo: {
-        host: process.env.MONGODB_HOST,
-        database: process.env.MONGODB_NAME,
-        user: process.env.MONGODB_USER,
-        password: process.env.MONGODB_PASSWORD
+        host: process.env.MONGODB_HOST || "clustermongo.rx8jg.mongodb.net",
+        database: process.env.MONGODB_NAME || "myFirstDatabase",
+        user: process.env.MONGODB_USER || "mongoUser",
+        password: process.env.MONGODB_PASSWORD || "admin123"
     },
     loggin: {
         file: process.env.LOG_PATH,
