@@ -20,20 +20,14 @@ const findUserById = (idUser, done) => {
     })
 }
 
+const allUsers = (done) =>{
+    User.find({}, (err, data)=>{
+        if(err)
+            console.log(err)
+        done(null, data)
+    });
+}
 
-/* const service = {
-    save: () => {
-        database.connection();
-        let newUser = new User({
-            username: "nuevo",
-        })
-        console.log(newUser);
-        return newUSer;
-    },
-    test: ()=>{
-        console.log("servicio prueba");
-        return true;
-    }
-} */
 exports.createUser = createUser;
 exports.findUserById = findUserById;
+exports.allUsers = allUsers;

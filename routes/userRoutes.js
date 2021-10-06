@@ -31,13 +31,13 @@ const userRoutes = {
             .catch(err => {
                 res.send("Error application")
             })
-
-
     },
-    logs: (req, res) => {
-        let val = typeof userService;
-        console.log(userService.test);
-        res.send("funcionando - " + val)
+    all: (req, res) => {
+        userService.allUsers((err, data)=>{
+            if(err)
+                registros = null;
+            res.json(data);
+        })
     }
 }
 
