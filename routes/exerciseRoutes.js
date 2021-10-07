@@ -7,7 +7,7 @@ const utilDate = require("../Utils/validations");
 const exerciseRoutes = {
     addExercise: (req, res) => {
         let dateConverted;
-        if (req.body.date == "undefined") {
+        if (req.body.date.length == 0) {
             let today = new Date();
             dateConverted = utilDate.convertToUnixTime(today.getTime());
         }
