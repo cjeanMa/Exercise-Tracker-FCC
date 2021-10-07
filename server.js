@@ -12,6 +12,16 @@ app.use(bodyParser.urlencoded({ extended: false }))
  
 // parse application/json
 app.use(bodyParser.json())
+app.use((req, res, next)=>{
+  console.log(req.method, req.path)
+  console.log("REQ PARAMS")
+  console.log(req.params)
+  console.log("REQ BODY")
+  console.log(req.body)
+  console.log("REQ QUERY")
+  console.log(req.query)
+  next();
+})
 /* Adding Routes to server */
 app.use(routes);
 /* 
